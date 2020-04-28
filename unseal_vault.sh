@@ -1,3 +1,5 @@
+#!/bin/bash
+
 function _unseal_vault {
   for (( COUNTER=0; COUNTER<5; COUNTER++ ))
   do
