@@ -2,7 +2,7 @@ version: '2'
 
 services:
   web:
-    container_name: vault-eth-test
+    container_name: vault-eth-test-2
     image: vault-test:2.0
     ports:
       - 8200:8200
