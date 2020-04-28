@@ -9,12 +9,13 @@ function initialize {
     exit 2
   fi
   export VAULT_TOKEN=$(echo $VAULT_INIT | jq .root_token | tr -d '"')
-  echo "$VAULT_TOKEN" >> ./VAULT_TOKEN.txt
+  mkdir /_private
+  echo "$VAULT_TOKEN" >> /_private/VAULT_TOKEN.txt
   for (( COUNTER=0; COUNTER<5; COUNTER++ ))
   do
     key=$(echo $VAULT_INIT | jq '.unseal_keys_hex['"$COUNTER"']' | tr -d '"')
     vault operator unseal $key
-    echo "$key" >> "./UNSEAL_$COUNTER.txt"
+    echo "$key" >> "/_private/UNSEAL_$COUNTER.txt"
   done
   unset VAULT_INIT
 }
