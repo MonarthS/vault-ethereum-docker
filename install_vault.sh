@@ -143,10 +143,10 @@ cat << EOF > /etc/vault.d/vault.hcl
   "path" = "/etc/vault.d/data"
 }
 
-"api_addr" = "https://localhost:8200"
+"api_addr" = "https://127.0.0.1:8200"
 
 "listener" "tcp" {
-  "address" = "localhost:8200"
+  "address" = "0.0.0.0:8200"
 
   "tls_cert_file" = "/etc/vault.d/vault.crt"
   "tls_client_ca_file" = "/etc/vault.d/root.crt"
