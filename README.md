@@ -12,5 +12,5 @@ docker-compose up -d
 
 #### Initialize Vault
 ```
-docker exec vault-eth-test initialize_vault
+docker exec vault-eth-test unseal_vault
 ```
