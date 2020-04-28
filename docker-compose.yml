@@ -12,8 +12,4 @@ services:
       - VAULT_CACERT=/etc/vault.d/root.crt
     cap_add:
       - IPC_LOCK
-    command: /usr/local/bin/vault server -config /etc/vault.d/vault.hcl"
-    exec:
-        start:
-          - sleep 10
-          - unseal_vault
+    command: unseal_vault

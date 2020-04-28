@@ -20,3 +20,6 @@ RUN chmod +x /usr/local/bin/initialize_vault
 ADD install_vault.sh ./
 RUN chmod +x install_vault.sh
 RUN ./install_vault.sh --linux
+
+EXPOSE 8200
+CMD ["vault", "server", "-config", "/etc/vault.d/vault.hcl"]
