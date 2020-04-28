@@ -89,6 +89,7 @@ cat << EOF > /etc/vault.d/vault.hcl
 
 "listener" "tcp" {
   "address" = "0.0.0.0:8200"
+  "tls_disable" = "true"
 }
 
 "plugin_directory" = "/etc/vault.d/vault_plugins"
