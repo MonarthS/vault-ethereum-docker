@@ -13,6 +13,6 @@ services:
     cap_add:
       - IPC_LOCK
     command: >
-      bash -c "/usr/local/bin/vault server -config /etc/vault.d/vault.hcl
+      bash -c "nohup /usr/local/bin/vault server -config /etc/vault.d/vault.hcl &> /dev/null &
       && sleep 10
       && unseal_vault"
