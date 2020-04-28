@@ -145,6 +145,8 @@ cat << EOF > /etc/vault.d/vault.hcl
 
 "api_addr" = "https://127.0.0.1:8200"
 
+"ui" = "true"
+
 "listener" "tcp" {
   "address" = "0.0.0.0:8200"
 
