@@ -12,4 +12,8 @@ services:
       - VAULT_CACERT=/etc/vault.d/root.crt
     cap_add:
       - IPC_LOCK
-    command: run_vault
+    command: /usr/local/bin/vault server -config /etc/vault.d/vault.hcl
+  
+  unseal_vault:
+    command: unseal_vault
+    depends_on: vault
