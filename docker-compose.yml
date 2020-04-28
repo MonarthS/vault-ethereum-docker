@@ -1,7 +1,7 @@
 version: '2'
 
 services:
-  vault:
+  web:
     container_name: vault-eth-test
     image: vault-test:1.0
     ports:
@@ -12,4 +12,8 @@ services:
       - VAULT_CACERT=/etc/vault.d/root.crt
     cap_add:
       - IPC_LOCK
-    command: ["/usr/local/bin/vault server -config /etc/vault.d/vault.hcl", "unseal_vault"]
+    command: /usr/local/bin/vault server -config /etc/vault.d/vault.hcl
+  
+  vaultinit:
+    image: vault-test:1.0
+    command:  bash -c "sleep 10 && unseal_vault"
