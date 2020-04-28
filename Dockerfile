@@ -8,6 +8,9 @@ RUN  apt-get update \
   && apt-get install -y libssl-dev \
   && apt-get install -y unzip
 
+ADD run_vault.sh /usr/local/bin/run_vault
+RUN chmod +x /usr/local/bin/run_vault
+
 ADD unseal_vault.sh /usr/local/bin/unseal_vault
 RUN chmod +x /usr/local/bin/unseal_vault
 

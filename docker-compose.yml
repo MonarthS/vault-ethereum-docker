@@ -12,7 +12,4 @@ services:
       - VAULT_CACERT=/etc/vault.d/root.crt
     cap_add:
       - IPC_LOCK
-    command: >
-      bash -c "nohup /usr/local/bin/vault server -config /etc/vault.d/vault.hcl &> /dev/null &
-      && sleep 10
-      && unseal_vault"
+    command: run_vault
