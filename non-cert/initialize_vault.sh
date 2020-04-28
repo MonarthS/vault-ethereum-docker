@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function initialize {
-  export VAULT_ADDR=https://localhost:8200
+  export VAULT_ADDR=http://localhost:8200
   export VAULT_INIT=$(vault operator init -format=json)
   if [[ $? -eq 2 ]] ; then
     echo "Vault initialization failed!"
